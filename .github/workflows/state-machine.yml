@@ -69,7 +69,7 @@ jobs:
 
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
-              repo: context.repo.name,
+              repo: context.repo.repo,
               issue_number: context.payload.issue.number,
               labels: [priority]
             });
@@ -198,7 +198,7 @@ jobs:
           script: |
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
-              repo: context.repo.name,
+              repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
               labels: ['🤖 agent:review', '👀 state:reviewing']
             });
@@ -271,7 +271,7 @@ jobs:
           script: |
             await github.rest.issues.createComment({
               owner: context.repo.owner,
-              repo: context.repo.name,
+              repo: context.repo.repo,
               issue_number: context.payload.issue.number,
               body: `🚨 **BLOCKED - Guardian Escalation**
 
@@ -295,7 +295,7 @@ jobs:
           script: |
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
-              repo: context.repo.name,
+              repo: context.repo.repo,
               issue_number: context.payload.issue.number,
               labels: ['⚠️ severity:Sev.2-High']
             });
