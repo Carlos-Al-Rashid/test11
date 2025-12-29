@@ -1,0 +1,20 @@
+.hello-world-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.hello-world-container h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.hello-world-container p {
+  font-size: 1.5rem;
+  color: #666;
+}
