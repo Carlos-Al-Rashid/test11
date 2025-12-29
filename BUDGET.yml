@@ -1,0 +1,30 @@
+# Miyabi Framework - Economic Governance Configuration
+# Monthly budget and threshold settings for cloud services
+
+monthly_budget_usd: 100
+
+thresholds:
+  warning: 0.7      # 70% - Warning notification
+  emergency: 0.9    # 90% - Circuit breaker activation
+
+services:
+  anthropic:
+    enabled: true
+    api_key_secret: ANTHROPIC_API_KEY
+
+  firebase:
+    enabled: false
+    project_id: ""
+
+  github_actions:
+    enabled: true
+
+notifications:
+  create_issue: true
+  post_comment: true
+  email: false
+
+circuit_breaker:
+  auto_disable_workflows: true
+  auto_close_issues: false
+  emergency_contacts: []
