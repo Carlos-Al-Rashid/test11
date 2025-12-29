@@ -1,14 +1,12 @@
 name: Sync Issues to Project
 
-# DISABLED: Configure GitHub Project first
-# To enable: Create a GitHub Project and update project-url below
+# Sync issues and PRs to GitHub Project
 on:
+  issues:
+    types: [opened, labeled, unlabeled, closed, reopened]
+  pull_request:
+    types: [opened, closed, reopened]
   workflow_dispatch:
-# on:
-#   issues:
-#     types: [opened, labeled, unlabeled, closed, reopened]
-#   pull_request:
-#     types: [opened, closed, reopened]
 
 jobs:
   sync-to-project:
@@ -21,5 +19,5 @@ jobs:
       - name: Sync to GitHub Projects
         uses: actions/add-to-project@v0.5.0
         with:
-          project-url: https://github.com/orgs/${{ github.repository_owner }}/projects/1
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-url: https://github.com/users/${{ github.repository_owner }}/projects/1
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}

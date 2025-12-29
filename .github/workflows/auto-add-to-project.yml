@@ -1,16 +1,11 @@
 name: Auto Add Issues to Project
 
-# DISABLED: Configure GitHub Project and GH_PROJECT_TOKEN first
-# To enable:
-# 1. Create a GitHub Project
-# 2. Add GH_PROJECT_TOKEN secret
-# 3. Update project-url below
-# 4. Uncomment the 'on' section
+# Auto-add new issues to GitHub Project
+# Requires: GH_PROJECT_TOKEN secret with 'project' and 'repo' scopes
 on:
+  issues:
+    types: [opened]
   workflow_dispatch:
-# on:
-#   issues:
-#     types: [opened]
 
 jobs:
   add-to-project:
