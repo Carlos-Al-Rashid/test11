@@ -105,11 +105,10 @@ jobs:
         run: |
           echo "🚀 Starting Autonomous Agent execution for Issue #${{ needs.check-trigger.outputs.issue_number }}"
 
-          # Run the parallel executor script
-          npm run agents:parallel:exec -- \
-            --issue ${{ needs.check-trigger.outputs.issue_number }} \
-            --concurrency 3 \
-            --log-level info
+          # Run the agent runner script
+          npm run agent:run -- \
+            --issue=${{ needs.check-trigger.outputs.issue_number }} \
+            --full
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
