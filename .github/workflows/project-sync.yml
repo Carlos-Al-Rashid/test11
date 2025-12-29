@@ -1,10 +1,14 @@
 name: Sync Issues to Project
 
+# DISABLED: Configure GitHub Project first
+# To enable: Create a GitHub Project and update project-url below
 on:
-  issues:
-    types: [opened, labeled, unlabeled, closed, reopened]
-  pull_request:
-    types: [opened, closed, reopened]
+  workflow_dispatch:
+# on:
+#   issues:
+#     types: [opened, labeled, unlabeled, closed, reopened]
+#   pull_request:
+#     types: [opened, closed, reopened]
 
 jobs:
   sync-to-project:
